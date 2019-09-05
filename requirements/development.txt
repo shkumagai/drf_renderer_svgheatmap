@@ -3,5 +3,5 @@ djangorestframework==3.10.3
 pytest==5.1.2
 pytest-cov==2.7.1
 pytest-django==3.5.1
-pytz==2018.5
+pytz==2019.2
 svgwrite==1.1.12
