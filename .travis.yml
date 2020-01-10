@@ -1,16 +1,17 @@
 sudo: false
 language: python
 python:
-- 3.4
 - 3.5
 - 3.6
 - 3.7
+- 3.8
 cache: pip
 env:
   matrix:
   - DJANGO=1.11
   - DJANGO=2.0
   - DJANGO=2.1
+  - DJANGO=2.2
 matrix:
   fast_finish: true
   include:
@@ -22,9 +23,6 @@ matrix:
     python: 3.7
   - env: TOXENV=check-manifest
     python: 3.7
-  exclude:
-  - python: 3.4
-    env: DJANGO=2.1
   allow_failures:
   - env: DJANGO=master
 install:
