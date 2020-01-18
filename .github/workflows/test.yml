@@ -1,0 +1,64 @@
+name: Test
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.5, 3.6, 3.7, 3.8]
+      max-parallel: 1
+
+    steps:
+      - name: Print github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo $GITHUB_CONTEXT
+
+      - name: Checkout code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: pycache
+        uses: actions/cache@v1
+        id: pycache
+        with:
+          path: .venv
+          key: python-${{ github.sha }}
+
+      - name: Setup python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install tox and any other packages for test
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox tox-gh-actions
+
+      - name: Test with tox
+        run: tox
+
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: [flake8, isort, readme, check-manifest]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+        with:
+          fetch-deps: 1
+
+      - name: Setup python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: Install tox and any other packages for test
+        run: pip install tox
+
+      - name: Run tox
+        run: tox -e ${{ matrix.env }}
