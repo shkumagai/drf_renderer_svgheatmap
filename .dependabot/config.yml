@@ -1,0 +1,12 @@
+version: 1
+update_configs:
+  - package_manager: python
+    directory: "/"
+    update_schedule: "daily"
+    target_branch: "master"
+    default_reviewers:
+      - shkumagai
+    default_labels:
+      - "dependencies"
+    version_requirement_updates: "increase_versions"
+
