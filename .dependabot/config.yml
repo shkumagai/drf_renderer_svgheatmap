@@ -8,5 +8,5 @@ update_configs:
       - shkumagai
     default_labels:
       - "dependencies"
-    version_requirement_updates: "increase_versions"
+    version_requirement_updates: "auto"
 
