@@ -10,9 +10,8 @@ include requirements.txt
 include runtests.py
 include Makefile
 
-exclude .dependabot
-exclude .dependabot/config.yml
 exclude .editorconfig
+exclude .pyup.yml
 exclude .travis.yml
 exclude tox.ini
 
