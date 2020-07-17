@@ -45,3 +45,4 @@ Develop
     $ cd drf_renderer_svgheatmap
     $ mkvirtualenv -a . -p $(which python) -r requirements/development.txt drf_svgheatmap
 
+[ ~ Dependencies scanned by PyUp.io ~ ]
