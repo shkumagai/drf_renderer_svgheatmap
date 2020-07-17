@@ -2,6 +2,18 @@
 DRF Renderer SVGHeatmap
 =======================
 
+.. image:: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg
+    :target: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg
+    :alt: Test
+
+.. image:: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/shield.svg
+    :target: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/
+    :alt: Updates
+
+.. image:: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/python-3-shield.svg
+    :target: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/
+    :alt: Python 3
+
 Purpose
 =======
 
@@ -44,5 +56,3 @@ Develop
     $ git clone git@github.com:shkumagai/drf_renderer_svgheatmap.git
     $ cd drf_renderer_svgheatmap
     $ mkvirtualenv -a . -p $(which python) -r requirements/development.txt drf_svgheatmap
-
-[ ~ Dependencies scanned by PyUp.io ~ ]

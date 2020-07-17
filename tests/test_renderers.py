@@ -17,14 +17,15 @@ import random
 import re
 from math import ceil
 
-from drf_renderer_svgheatmap.renderers import (
-    BaseSVGHeatmapRenderer,
-    SimpleSVGHeatmapRenderer,
-)
 from rest_framework import status
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from drf_renderer_svgheatmap.renderers import (
+    BaseSVGHeatmapRenderer,
+    SimpleSVGHeatmapRenderer,
+)
 
 DUMMYSTATUS = status.HTTP_200_OK
 EMPTYCONTENT = []
