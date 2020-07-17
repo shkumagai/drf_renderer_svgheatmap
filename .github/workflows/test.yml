@@ -40,6 +40,11 @@ jobs:
       - name: Test with tox
         run: tox
 
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: .coverage
+
   lint:
     runs-on: ubuntu-latest
     strategy:

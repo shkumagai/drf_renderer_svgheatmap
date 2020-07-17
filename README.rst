@@ -2,9 +2,13 @@
 DRF Renderer SVGHeatmap
 =======================
 
-.. image:: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg
-    :target: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg
-    :alt: Test
+.. image:: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg?branch=master
+    :target: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg?branch=master
+    :alt: master
+
+.. image:: https://codecov.io/gh/shkumagai/drf_renderer_svgheatmap/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/shkumagai/drf_renderer_svgheatmap
+    :alt: Coverage
 
 .. image:: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/shield.svg
     :target: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/
