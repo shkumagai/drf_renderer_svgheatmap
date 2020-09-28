@@ -1,4 +1,4 @@
 Django>=2.2.8
-djangorestframework==3.11.1
+djangorestframework==3.12.1
 pytz==2020.1
 svgwrite==1.4
