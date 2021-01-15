@@ -13,7 +13,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from .test_renderers import (
     AnotherSimpleMockView,
@@ -26,31 +26,31 @@ from .test_renderers import (
 )
 
 urlpatterns = [
-    url(
+    re_path(
         r'^$',
         SomethingBaseMockView.as_view(),
     ),
-    url(
+    re_path(
         r'^empty(\.(?P<format>.+))?$',
         EmptyBaseMockView.as_view(),
     ),
-    url(
+    re_path(
         r'^simple2d$',
         SomethingSimple2DMockView.as_view(),
     ),
-    url(
+    re_path(
         r'^simple1d$',
         SomethingSimple1DMockView.as_view(),
     ),
-    url(
+    re_path(
         r'^another$',
         AnotherSimpleMockView.as_view(),
     ),
-    url(
+    re_path(
         r'^other$',
         OtherSimpleMockView.as_view(),
     ),
-    url(
+    re_path(
         r'^simple/empty$',
         EmptySimpleMockView.as_view(),
     ),
