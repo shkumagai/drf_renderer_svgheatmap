@@ -8,7 +8,7 @@ jobs:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10-dev]
       max-parallel: 1
 
     steps:
@@ -26,11 +26,20 @@ jobs:
         uses: actions/cache@v2
         id: pycache
         with:
-          path: .venv
-          key: python-${{ github.sha }}
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Setup python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
+        if: "!endsWith(matrix.python-version, '-dev')"
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Setup python ${{ matrix.python-version }} (via deadsnakes)
+        users: deadsnakes/action@v2.1.1
+        if: "endsWith(matrix.python-version, '-dev')"
         with:
           python-version: ${{ matrix.python-version }}
 
