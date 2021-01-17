@@ -12,8 +12,8 @@ include Makefile
 
 exclude .editorconfig
 exclude .pyup.yml
-exclude .travis.yml
 exclude tox.ini
+exclude mypy.ini
 
 global-exclude __pycache__
 global-exclude *py[co]
