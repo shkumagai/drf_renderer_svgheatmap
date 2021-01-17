@@ -13,12 +13,19 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+from typing import Any, Dict, List, Optional, Union
+
 from rest_framework.renderers import BaseRenderer
 from svgwrite import Drawing
 from svgwrite.container import Group
 from svgwrite.shapes import Rect
 
-DEFAULT_COLOR_SCALE = [
+# Data types
+Point = Dict[str, int]
+DataContainer = List[Point]
+ColorScale = List[str]
+
+DEFAULT_COLOR_SCALE: ColorScale = [
     '#3300FF',
     '#00B3FF',
     '#00FFFF',
@@ -30,8 +37,8 @@ DEFAULT_COLOR_SCALE = [
     '#FF4D00',
     '#FF0000',
 ]
-GRID = 32
-OPACITY = 0.5  # 0.0 (transparent) to 1.0 (opaque)
+GRID: int = 32
+OPACITY: float = 0.5  # 0.0 (transparent) to 1.0 (opaque)
 
 
 class BaseSVGHeatmapRenderer(BaseRenderer):
@@ -40,15 +47,25 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
     To use this renderer, need to implement `translate` method in subclass.
     """
 
-    media_type = 'image/svg+xml'
-    format = 'svg'
+    media_type: str = 'image/svg+xml'
+    format: str = 'svg'
 
-    filename = 'heatmap.svg'
-    svg_profile = 'full'
-    default_width = '100%'
-    default_height = '100%'
+    filename: str = 'heatmap.svg'
+    svg_profile: str = 'full'
+    default_width: str = '100%'
+    default_height: str = '100%'
 
-    def translate(self, data, width, height, x_key='x', y_key='y', v_key='value', is_1d=False, **kwargs):
+    def translate(
+        self,
+        data: DataContainer,
+        width: int,
+        height: int,
+        x_key: str = 'x',
+        y_key: str = 'y',
+        v_key: str = 'value',
+        is_1d: bool = False,
+        **kwargs: Any,
+    ) -> Group:
         """Base translator for SVG Heatmap renderer.
 
         :param data: point datum array.
@@ -63,7 +80,12 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
         """
         return Group()
 
-    def render(self, data, accepted_media_type=None, renderer_context=None):
+    def render(
+        self,
+        data: DataContainer,
+        accepted_media_type: Optional[str] = None,
+        renderer_context: Optional[Dict[str, Union[str, int, float]]] = None,
+    ) -> bytes:
         """
         :param data: point datum array, or dict that include those array in certain key.
             point datum represent by dict consists with x, y positions and value.
@@ -105,17 +127,17 @@ class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
 
     def translate(
         self,
-        data,
-        width,
-        height,
-        x_key='x',
-        y_key='y',
-        v_key='value',
-        is_1d=False,
-        colorScale=DEFAULT_COLOR_SCALE,
-        grid=GRID,
-        opacity=OPACITY,
-        **kwargs
+        data: DataContainer,
+        width: int,
+        height: int,
+        x_key: str = 'x',
+        y_key: str = 'y',
+        v_key: str = 'value',
+        is_1d: bool = False,
+        colorScale: ColorScale = DEFAULT_COLOR_SCALE,
+        grid: int = GRID,
+        opacity: float = OPACITY,
+        **kwargs: Any,
     ):
         """Points to Rect element translator for Simple SVG Heatmap renderer.
 
