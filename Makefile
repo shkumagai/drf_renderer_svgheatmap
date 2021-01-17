@@ -32,6 +32,8 @@ clean-test:
 	rm -fr .tox/
 	rm -fr .coverage
 	rm -fr htmlcov
+	rm -fr .pytest_cache/
+	rm -fr .mypy_cache/
 
 lint:
 	@flake8 drf_renderer_svgheatmap tests
