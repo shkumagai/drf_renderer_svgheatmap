@@ -1,5 +1,5 @@
 Django>=2.2.8
 djangorestframework==3.12.2
-pytz==2020.5
+pytz==2021.1
 svgwrite==1.4
 mypy>=0.790
