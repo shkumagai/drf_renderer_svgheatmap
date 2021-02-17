@@ -1,2 +1,6 @@
+Django
+djangorestframework
+svgwrite
 -r requirements/development.txt
 -r requirements/testing.txt
+-r requirements/packaging.txt
