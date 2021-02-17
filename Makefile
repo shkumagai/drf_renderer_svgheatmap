@@ -1,58 +1,52 @@
-.PHONY: clean clean-test clean-build help
-
-PYPI_SERVER = pypitest
-
+.PHONY: help
 help:
-	@echo "Use \`make <target>' where <target> is one of"
-	@echo "  clean       to remove all build, test, coverages, and Python artifacts"
-	@echo "  clean-build to remove build artifacts"
-	@echo "  clean-pyc   to remove Python file artifacts"
-	@echo "  clean-test  to remove test and coverage artifacts"
-	@echo "  lint        to check style with flake8"
-	@echo "  test        to run tests instantly with default Python"
-	@echo "  test-all    to run tests on all Python versions with tox"
-	@echo "  dist        to builds source distribution and wheel package"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
+	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' \
+	| sort
 
-clean: clean-build clean-pyc clean-test
+.PHONY: clean
+clean: clean-build clean-pyc clean-test ## clean up all artifacts
 
-clean-build:
-	rm -fr build/
-	rm -fr dist/
-	rm -fr .eggs/
-	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -fr {} +
+.PHONY: clean-build
+clean-build: ## remove build artifacts
+	-rm -fr build dist .eggs
+	-find . -name '*.egg' \
+		-o -name '*.egg-info' \
+		-print0 | xargs -0 rm -fr
 
-clean-pyc:
-	find . -name '*.pyc' -exec rm -fr {} +
-	find . -name '*.pyo' -exec rm -fr {} +
-	find . -name '*~' -exec rm -fr {} +
-	find . -name '__pycache__' -exec rm -fr {} +
+.PHONY: clean-pyc
+clean-pyc: ## remove Python intermediate files
+	-find . -name '*.pyc' \
+		-o -name '*.pyo' \
+		-o -name '*~' \
+		-o -name '__pycache__' \
+		-print0 | xargs -0 rm -fr
 
-clean-test:
-	rm -fr .tox/
-	rm -fr .coverage
-	rm -fr htmlcov
-	rm -fr .pytest_cache/
-	rm -fr .mypy_cache/
+.PHONY: clean-test
+clean-test: ## remove unittest related artifacts
+	-rm -fr .tox .coverage htmlcov .pytest_cache .mypy_cache
 
-lint:
+lint: ## check style with flake8
 	@flake8 drf_renderer_svgheatmap tests
 
-test:
+test: ## run tests
 	@python -m pytest
 
-test-lint:
+test-lint: ## run lint related tests
 	@tox -e flake8,isort
 
-test-all:
+test-all: ## run all tests with tox
 	@tox
 
-dist:
+dist: ## build source distribution and wheel package
 	@python setup.py sdist bdist_wheel
 	@ls -l dist
 
-release: clean dist
-	twine upload -r $(PYPI_SERVER) dist/*
+release-test: ## release packages to testpypi server
+	twine upload -r testpypi dist/*
+
+release-prod: ## release packages to pypi server
+	twine upload -r pypi dist/*
 
 install:
 	python setup.py install
