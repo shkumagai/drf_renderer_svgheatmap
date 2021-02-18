@@ -58,13 +58,6 @@ jobs:
         with:
           file: coverage.xml
 
-      - name: Notify test result to Slack
-        uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-        if: failure()
-
   lint:
     runs-on: ubuntu-latest
     env:
@@ -89,10 +82,3 @@ jobs:
 
       - name: Run tox
         run: tox -e ${{ matrix.env }}
-
-      - name: Notify lint result to Slack
-        uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-        if: failure()
