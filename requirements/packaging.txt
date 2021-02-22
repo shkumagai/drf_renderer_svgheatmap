@@ -14,7 +14,7 @@ colorama==0.4.4
     # via twine
 docutils==0.16
     # via readme-renderer
-idna==2.10
+idna==3.1
     # via requests
 keyring==22.0.1
     # via twine
