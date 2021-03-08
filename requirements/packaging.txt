@@ -16,7 +16,7 @@ docutils==0.16
     # via readme-renderer
 idna==3.1
     # via requests
-keyring==22.3.0
+keyring==23.0.0
     # via twine
 packaging==20.9
     # via bleach
