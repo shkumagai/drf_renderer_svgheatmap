@@ -30,7 +30,7 @@ pathspec==0.8.1
     # via black
 pycodestyle==2.7.0
     # via flake8
-pyflakes==2.2.0
+pyflakes==2.3.0
     # via flake8
 regex==2020.11.13
     # via black
