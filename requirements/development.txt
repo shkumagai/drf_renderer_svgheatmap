@@ -28,7 +28,7 @@ mypy==0.812
     # via -r development.in
 pathspec==0.8.1
     # via black
-pycodestyle==2.6.0
+pycodestyle==2.7.0
     # via flake8
 pyflakes==2.2.0
     # via flake8
