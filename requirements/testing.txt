@@ -22,7 +22,7 @@ pytest-cov==2.11.1
     # via -r testing.in
 pytest-django==4.1.0
     # via -r testing.in
-pytest==6.2.2
+pytest==6.2.3
     # via
     #   -r testing.in
     #   pytest-cov
