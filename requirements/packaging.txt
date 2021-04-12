@@ -56,7 +56,7 @@ six==1.15.0
     # via
     #   bleach
     #   readme-renderer
-tqdm==4.59.0
+tqdm==4.60.0
     # via twine
 twine==3.4.1
     # via -r requirements/packaging.in
