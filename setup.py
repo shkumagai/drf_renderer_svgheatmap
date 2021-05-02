@@ -10,6 +10,7 @@ with open('HISTORY.rst') as history_rst:
     history = history_rst.read()
 
 install_requires = [
+    'Django',
     'djangorestframework',
     'svgwrite',
 ]
@@ -18,8 +19,8 @@ classifiers = [
     'Development State :: 3 - Alpha',
     'Environment :: Web Environment',
     'Framework :: Django :: 2.2',
-    'Framework :: Django :: 3.0',
     'Framework :: Django :: 3.1',
+    'Framework :: Django :: 3.2',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: Apache Software License',
     'Operating System :: OS Independent',
@@ -44,6 +45,6 @@ setup(
     packages=find_packages(exclude=['tests*']),
     include_package_data=True,
     install_requires=install_requires,
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     zip_safe=False,
 )
