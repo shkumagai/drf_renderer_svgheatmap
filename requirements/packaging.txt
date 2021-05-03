@@ -26,7 +26,7 @@ packaging==20.9
     # via bleach
 pkginfo==1.7.0
     # via twine
-pygments==2.8.1
+pygments==2.9.0
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
