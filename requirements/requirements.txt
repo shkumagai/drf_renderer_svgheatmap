@@ -16,7 +16,7 @@ attrs==20.3.0
     # via
     #   -r testing.txt
     #   pytest
-black==21.4b2
+black==21.5b0
     # via -r development.txt
 click==7.1.2
     # via
@@ -26,7 +26,7 @@ coverage==5.5
     # via
     #   -r testing.txt
     #   pytest-cov
-django==3.2
+django==3.2.1
     # via
     #   -r base.txt
     #   djangorestframework
@@ -89,7 +89,7 @@ pytest-cov==2.11.1
     # via -r testing.txt
 pytest-django==4.2.0
     # via -r testing.txt
-pytest==6.2.3
+pytest==6.2.4
     # via
     #   -r testing.txt
     #   pytest-cov
