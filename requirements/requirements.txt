@@ -12,7 +12,7 @@ asgiref==3.3.4
     # via
     #   -r base.txt
     #   django
-attrs==20.3.0
+attrs==21.2.0
     # via
     #   -r testing.txt
     #   pytest
