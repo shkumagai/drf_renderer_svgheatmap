@@ -162,7 +162,6 @@ class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
         group = Group()
         if data and isinstance(data, list):
             for datum in data:
-                print(datum)
                 extra = {
                     'opacity': opacity,
                     'fill': colorScale[datum[v_key] - 1],
