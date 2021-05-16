@@ -33,27 +33,26 @@ EMPTYCONTENT = []
 
 def generatePoints(grid=32, length=360, is_1d=False):
     points = [
-        dict(
-            x=random.randint(0, grid - 1),
-            y=random.randint(0, grid * 2 - 1),
-            value=random.randint(1, 1000),
-        ) for i in range(length)
+        {
+            "x": random.randint(0, grid - 1),
+            "y": random.randint(0, grid * 2 - 1),
+            "value": random.randint(1, 1000),
+        } for i in range(length)
     ]
-    max_value = max([p['value'] for p in points])
+    max_value = max(p['value'] for p in points)
     key_fmt = '{y}' if is_1d else '{x}-{y}'
     _points = {}
     for point in points:
         point['relative_value'] = ceil(point['value'] * 10 / max_value)
         _points.setdefault(key_fmt.format(**point), point)
-    return sorted(list(_points.values()), key=lambda p: p['y'])
+    return sorted(_points.values(), key=lambda p: p['y'])
 
 
 class EmptyBaseMockView(APIView):
     renderer_classes = (BaseSVGHeatmapRenderer, JSONRenderer, )
 
     def get(self, request, **kwargs):
-        response = Response(EMPTYCONTENT, status=DUMMYSTATUS)
-        return response
+        return Response(EMPTYCONTENT, status=DUMMYSTATUS)
 
 
 class SomethingBaseMockView(APIView):
@@ -63,8 +62,7 @@ class SomethingBaseMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints()
-        response = Response(points, status=DUMMYSTATUS)
-        return response
+        return Response(points, status=DUMMYSTATUS)
 
 
 re_svgroot = re.compile(
@@ -121,8 +119,7 @@ class EmptySimpleMockView(APIView):
     renderer_classes = (SimpleSVGHeatmapRenderer, )
 
     def get(self, request, **kwargs):
-        response = Response(EMPTYCONTENT, status=DUMMYSTATUS)
-        return response
+        return Response(EMPTYCONTENT, status=DUMMYSTATUS)
 
 
 class SomethingSimple2DMockView(APIView):
@@ -134,8 +131,7 @@ class SomethingSimple2DMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints(grid=self.grid)
-        response = Response({"interactions": points}, status=DUMMYSTATUS)
-        return response
+        return Response({"interactions": points}, status=DUMMYSTATUS)
 
 
 class SomethingSimple1DMockView(SomethingSimple2DMockView):
@@ -150,8 +146,7 @@ class AnotherSimpleMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints()
-        response = Response(points, status=DUMMYSTATUS)
-        return response
+        return Response(points, status=DUMMYSTATUS)
 
 
 class OtherSimpleMockView(APIView):
@@ -162,8 +157,7 @@ class OtherSimpleMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints()
-        response = Response(points, status=DUMMYSTATUS)
-        return response
+        return Response(points, status=DUMMYSTATUS)
 
 
 re_rectnode = re.compile(
