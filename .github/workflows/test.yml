@@ -31,15 +31,15 @@ jobs:
 
       - name: Setup python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
-        if: "!endsWith(matrix.python-version, '-dev')"
+        # if: "!endsWith(matrix.python-version, '-dev')"
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Setup python ${{ matrix.python-version }} (via deadsnakes)
-        uses: deadsnakes/action@v2.1.1
-        if: "endsWith(matrix.python-version, '-dev')"
-        with:
-          python-version: ${{ matrix.python-version }}
+      # - name: Setup python ${{ matrix.python-version }} (via deadsnakes)
+      #   uses: deadsnakes/action@v2.1.1
+      #   if: "endsWith(matrix.python-version, '-dev')"
+      #   with:
+      #     python-version: ${{ matrix.python-version }}
 
       - name: Install tox and any other packages for test
         run: |
