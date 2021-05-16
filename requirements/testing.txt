@@ -6,7 +6,7 @@
 #
 attrs==21.2.0
     # via pytest
-coverage==5.5
+coverage[toml]==5.5
     # via pytest-cov
 iniconfig==1.1.1
     # via pytest
@@ -18,9 +18,9 @@ py==1.10.0
     # via pytest
 pyparsing==2.4.7
     # via packaging
-pytest-cov==2.11.1
+pytest-cov==2.12.0
     # via -r testing.in
-pytest-django==4.2.0
+pytest-django==4.3.0
     # via -r testing.in
 pytest==6.2.4
     # via
@@ -28,4 +28,6 @@ pytest==6.2.4
     #   pytest-cov
     #   pytest-django
 toml==0.10.2
-    # via pytest
+    # via
+    #   coverage
+    #   pytest

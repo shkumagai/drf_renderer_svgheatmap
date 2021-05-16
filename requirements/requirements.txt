@@ -18,25 +18,25 @@ attrs==21.2.0
     #   pytest
 black==21.5b1
     # via -r development.txt
-click==7.1.2
+click==8.0.0
     # via
     #   -r development.txt
     #   black
-coverage==5.5
+coverage[toml]==5.5
     # via
     #   -r testing.txt
     #   pytest-cov
-django==3.2.2
+django==3.2.3
     # via
     #   -r base.txt
     #   djangorestframework
 djangorestframework==3.12.4
     # via -r base.txt
-flake8-plugin-utils==1.3.1
+flake8-plugin-utils==1.3.2
     # via
     #   -r development.txt
     #   flake8-return
-flake8-return==1.1.2
+flake8-return==1.1.3
     # via -r development.txt
 flake8==3.9.2
     # via -r development.txt
@@ -85,9 +85,9 @@ pyparsing==2.4.7
     # via
     #   -r testing.txt
     #   packaging
-pytest-cov==2.11.1
+pytest-cov==2.12.0
     # via -r testing.txt
-pytest-django==4.2.0
+pytest-django==4.3.0
     # via -r testing.txt
 pytest==6.2.4
     # via
@@ -113,6 +113,7 @@ toml==0.10.2
     #   -r development.txt
     #   -r testing.txt
     #   black
+    #   coverage
     #   pytest
 typed-ast==1.4.3
     # via
