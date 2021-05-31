@@ -50,7 +50,7 @@ tqdm==4.61.0
     # via twine
 twine==3.4.1
     # via -r packaging.in
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
 webencodings==0.5.1
     # via bleach
