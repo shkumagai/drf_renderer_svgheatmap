@@ -8,10 +8,14 @@ bleach==3.3.0
     # via readme-renderer
 certifi==2020.12.5
     # via requests
+cffi==1.14.5
+    # via cryptography
 chardet==4.0.0
     # via requests
 colorama==0.4.4
     # via twine
+cryptography==3.4.7
+    # via secretstorage
 docutils==0.17.1
     # via readme-renderer
 idna==2.10
@@ -22,12 +26,18 @@ importlib-metadata==4.0.1
     # via
     #   keyring
     #   twine
+jeepney==0.6.0
+    # via
+    #   keyring
+    #   secretstorage
 keyring==23.0.1
     # via twine
 packaging==20.9
     # via bleach
 pkginfo==1.7.0
     # via twine
+pycparser==2.20
+    # via cffi
 pygments==2.9.0
     # via readme-renderer
 pyparsing==2.4.7
@@ -42,6 +52,8 @@ requests==2.25.1
     #   twine
 rfc3986==1.5.0
     # via twine
+secretstorage==3.3.1
+    # via keyring
 six==1.16.0
     # via
     #   bleach
@@ -50,7 +62,7 @@ tqdm==4.60.0
     # via twine
 twine==3.4.1
     # via -r packaging.in
-urllib3==1.26.4
+urllib3==1.26.5
     # via requests
 webencodings==0.5.1
     # via bleach
