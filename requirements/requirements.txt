@@ -113,12 +113,9 @@ toml==0.10.2
     #   -r development.txt
     #   -r testing.txt
     #   black
+    #   mypy
     #   pytest
     #   pytest-cov
-typed-ast==1.4.3
-    # via
-    #   -r development.txt
-    #   mypy
 typing-extensions==3.10.0.0
     # via
     #   -r development.txt
