@@ -8,8 +8,8 @@ import pytest
 
 
 PYTEST_ARGS = {
-    'default': ['--verbose'],
-    'fast': ['-q'],
+    "default": ["--verbose"],
+    "fast": ["-q"],
 }
 
 
@@ -18,34 +18,36 @@ def exit_on_failure(ret, message=None):
         sys.exit(ret)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
-        sys.argv.remove('--fast')
+        sys.argv.remove("--fast")
     except ValueError:
-        style = 'default'
+        style = "default"
     else:
-        style = 'fast'
+        style = "fast"
 
     if len(sys.argv) > 1:
         pytest_args = sys.argv[1:]
         first_arg = pytest_args[0]
 
         try:
-            pytest_args.remove('--coverage')
+            pytest_args.remove("--coverage")
         except ValueError:
             pass
         else:
             pytest_args = [
-                '--cov', 'drf_renderer_svgheatmap',
-                '--cov-report', 'xml',
+                "--cov",
+                "drf_renderer_svgheatmap",
+                "--cov-report",
+                "xml",
             ] + pytest_args
 
-        if first_arg.startswith('-'):
+        if first_arg.startswith("-"):
             # `runtests.py [flags]`
-            pytest_args = pytest_args + ['tests']
+            pytest_args = pytest_args + ["tests"]
 
     else:
         pytest_args = PYTEST_ARGS[style]
 
-    print(' '.join(pytest_args))
+    print(" ".join(pytest_args))
     exit_on_failure(pytest.main(pytest_args))

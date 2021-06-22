@@ -27,31 +27,31 @@ from .test_renderers import (
 
 urlpatterns = [
     re_path(
-        r'^$',
+        r"^$",
         SomethingBaseMockView.as_view(),
     ),
     re_path(
-        r'^empty(\.(?P<format>.+))?$',
+        r"^empty(\.(?P<format>.+))?$",
         EmptyBaseMockView.as_view(),
     ),
     re_path(
-        r'^simple2d$',
+        r"^simple2d$",
         SomethingSimple2DMockView.as_view(),
     ),
     re_path(
-        r'^simple1d$',
+        r"^simple1d$",
         SomethingSimple1DMockView.as_view(),
     ),
     re_path(
-        r'^another$',
+        r"^another$",
         AnotherSimpleMockView.as_view(),
     ),
     re_path(
-        r'^other$',
+        r"^other$",
         OtherSimpleMockView.as_view(),
     ),
     re_path(
-        r'^simple/empty$',
+        r"^simple/empty$",
         EmptySimpleMockView.as_view(),
     ),
 ]

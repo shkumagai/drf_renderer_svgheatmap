@@ -21,13 +21,14 @@ import django
 
 def pytest_addoption(parser):
     parser.addoption(
-        '--no-pkgroot',
-        action='store_true',
+        "--no-pkgroot",
+        action="store_true",
         default=False,
         help=(
-            'Remove package root directory from sys.path, ensuring that '
-            'drf_renderer_svgheatmap is imported from the installed site-packages. '
-            'Used for testing the distribution.'),
+            "Remove package root directory from sys.path, ensuring that "
+            "drf_renderer_svgheatmap is imported from the installed site-packages. "
+            "Used for testing the distribution."
+        ),
     )
 
 
@@ -37,53 +38,52 @@ def pytest_configure(config):
     settings.configure(
         DEBUG_PROPAGATE_EXCEPTION=True,
         DATABASES={
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': ':memory:',
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": ":memory:",
             }
         },
         SITE_ID=1,
-        SECRET_KEY='not very secret in tests',
+        SECRET_KEY="not very secret in tests",
         USE_I18N=True,
         USE_L10N=True,
-        STATIC_URL='/static/',
-        ROOT_URLCONF='tests.urls',
+        STATIC_URL="/static/",
+        ROOT_URLCONF="tests.urls",
         TEMPLATES=[
             {
-                'BACKEND': 'django.template.backends.django.DjangoTemplates',
-                'APP_DIRS': True,
-                'OPTIONS': {
+                "BACKEND": "django.template.backends.django.DjangoTemplates",
+                "APP_DIRS": True,
+                "OPTIONS": {
                     "debug": True,
-                }
+                },
             },
         ],
         MODDLEWARE=(
-            'django.middleware.common.CommonMiddleware',
-            'django.contrib.sessions.middleware.SessionMiddleware',
-            'django.contrib.auth.middleware.AuthenticationMiddleware',
-            'django.contrib.messages.middleware.MessageMiddleware',
+            "django.middleware.common.CommonMiddleware",
+            "django.contrib.sessions.middleware.SessionMiddleware",
+            "django.contrib.auth.middleware.AuthenticationMiddleware",
+            "django.contrib.messages.middleware.MessageMiddleware",
         ),
         INSTALLED_APPS=(
-            'django.contrib.admin',
-            'django.contrib.auth',
-            'django.contrib.contenttypes',
-            'django.contrib.sessions',
-            'django.contrib.staticfiles',
-            'rest_framework',
-            'rest_framework.authtoken',
-            'drf_renderer_svgheatmap',
-            'tests',
+            "django.contrib.admin",
+            "django.contrib.auth",
+            "django.contrib.contenttypes",
+            "django.contrib.sessions",
+            "django.contrib.staticfiles",
+            "rest_framework",
+            "rest_framework.authtoken",
+            "drf_renderer_svgheatmap",
+            "tests",
         ),
-        PASSWORD_HASHERS=(
-            'django.contrib.auth.hashers.MD5PasswordHasher',
-        ),
+        PASSWORD_HASHERS=("django.contrib.auth.hashers.MD5PasswordHasher",),
     )
 
-    if config.getoption('--no-pkgroot'):
+    if config.getoption("--no-pkgroot"):
         sys.path.pop(0)
 
         import drf_renderer_svgheatmap
-        package_dir = os.path.join(os.getcwd(), 'drf_renderer_svgheatmap')
+
+        package_dir = os.path.join(os.getcwd(), "drf_renderer_svgheatmap")
         assert not drf_renderer_svgheatmap.__file__.startswith(package_dir)
 
     django.setup()
