@@ -26,16 +26,16 @@ DataContainer = List[Point]
 ColorScale = List[str]
 
 DEFAULT_COLOR_SCALE: ColorScale = [
-    '#3300FF',
-    '#00B3FF',
-    '#00FFFF',
-    '#00FF66',
-    '#33FF00',
-    '#CCFF00',
-    '#FFE600',
-    '#FF9900',
-    '#FF4D00',
-    '#FF0000',
+    "#3300FF",
+    "#00B3FF",
+    "#00FFFF",
+    "#00FF66",
+    "#33FF00",
+    "#CCFF00",
+    "#FFE600",
+    "#FF9900",
+    "#FF4D00",
+    "#FF0000",
 ]
 GRID: int = 32
 OPACITY: float = 0.5  # 0.0 (transparent) to 1.0 (opaque)
@@ -47,22 +47,22 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
     To use this renderer, need to implement `translate` method in subclass.
     """
 
-    media_type: str = 'image/svg+xml'
-    format: str = 'svg'
+    media_type: str = "image/svg+xml"
+    format: str = "svg"
 
-    filename: str = 'heatmap.svg'
-    svg_profile: str = 'full'
-    default_width: str = '100%'
-    default_height: str = '100%'
+    filename: str = "heatmap.svg"
+    svg_profile: str = "full"
+    default_width: str = "100%"
+    default_height: str = "100%"
 
     def translate(
         self,
         data: DataContainer,
         width: int,
         height: int,
-        x_key: str = 'x',
-        y_key: str = 'y',
-        v_key: str = 'value',
+        x_key: str = "x",
+        y_key: str = "y",
+        v_key: str = "value",
         is_1d: bool = False,
         **kwargs: Any,
     ) -> Group:
@@ -96,30 +96,32 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
         :return: SVG formatted heatmap in bytestring.
         """
         renderer_context = renderer_context or {}
-        view = renderer_context['view']
+        view = renderer_context["view"]
 
-        width = getattr(view, 'width', self.default_width)
-        height = getattr(view, 'height', self.default_height)
+        width = getattr(view, "width", self.default_width)
+        height = getattr(view, "height", self.default_height)
         translatorArgs = {
-            'colorScale': getattr(view, 'color_scale', DEFAULT_COLOR_SCALE),
-            'grid': getattr(view, 'grid', GRID),
-            'opacity': getattr(view, 'opacity', OPACITY),
-            'x_key': getattr(view, 'x_key', 'x'),
-            'y_key': getattr(view, 'y_key', 'y'),
-            'v_key': getattr(view, 'v_key', 'value'),
-            'is_1d': getattr(view, 'is_1d', False),
+            "colorScale": getattr(view, "color_scale", DEFAULT_COLOR_SCALE),
+            "grid": getattr(view, "grid", GRID),
+            "opacity": getattr(view, "opacity", OPACITY),
+            "x_key": getattr(view, "x_key", "x"),
+            "y_key": getattr(view, "y_key", "y"),
+            "v_key": getattr(view, "v_key", "value"),
+            "is_1d": getattr(view, "is_1d", False),
         }
 
-        svg_render_map = getattr(view, 'svg_render_map', None)
+        svg_render_map = getattr(view, "svg_render_map", None)
         bare_data = data if svg_render_map is None else data[svg_render_map]
         datagroup = self.translate(bare_data, width, height, **translatorArgs)
 
         drawSize = (width, height)
-        svgargs = getattr(view, 'svgargs', {})
-        drawing = Drawing(self.filename, size=drawSize, profile=self.svg_profile, **svgargs)
+        svgargs = getattr(view, "svgargs", {})
+        drawing = Drawing(
+            self.filename, size=drawSize, profile=self.svg_profile, **svgargs
+        )
         drawing.add(datagroup)
 
-        return drawing.tostring().encode('ascii')
+        return drawing.tostring().encode("ascii")
 
 
 class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
@@ -130,9 +132,9 @@ class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
         data: DataContainer,
         width: int,
         height: int,
-        x_key: str = 'x',
-        y_key: str = 'y',
-        v_key: str = 'value',
+        x_key: str = "x",
+        y_key: str = "y",
+        v_key: str = "value",
         is_1d: bool = False,
         colorScale: ColorScale = DEFAULT_COLOR_SCALE,
         grid: int = GRID,
@@ -163,8 +165,8 @@ class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
         if data and isinstance(data, list):
             for datum in data:
                 extra = {
-                    'opacity': opacity,
-                    'fill': colorScale[datum[v_key] - 1],
+                    "opacity": opacity,
+                    "fill": colorScale[datum[v_key] - 1],
                 }
 
                 insert_x = 0 if is_1d else gridSize * datum[x_key]
@@ -181,9 +183,9 @@ class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
                         size_w if not isRelative else "%.4f%%" % size_w,
                         size_h if not isRelative else "%.4f%%" % size_h,
                     ),
-                    **extra
+                    **extra,
                 )
-                rect.set_desc(title='{0}%'.format(datum[v_key] * 10))
+                rect.set_desc(title="{0}%".format(datum[v_key] * 10))
                 group.add(rect)
 
         return group
