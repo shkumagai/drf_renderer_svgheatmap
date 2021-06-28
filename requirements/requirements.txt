@@ -8,7 +8,7 @@ appdirs==1.4.4
     # via
     #   -r development.txt
     #   black
-asgiref==3.3.4
+asgiref==3.4.0
     # via
     #   -r base.txt
     #   django
