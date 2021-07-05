@@ -56,5 +56,5 @@ webencodings==0.5.1
     # via bleach
 wheel==0.36.2
     # via -r packaging.in
-zipp==3.4.1
+zipp==3.5.0
     # via importlib-metadata
