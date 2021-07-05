@@ -98,7 +98,7 @@ pytz==2021.1
     # via
     #   -r base.txt
     #   django
-regex==2021.4.4
+regex==2021.7.1
     # via
     #   -r development.txt
     #   black
