@@ -8,7 +8,7 @@ appdirs==1.4.4
     # via
     #   -r development.txt
     #   black
-asgiref==3.4.0
+asgiref==3.4.1
     # via
     #   -r base.txt
     #   django
@@ -26,7 +26,7 @@ coverage==5.5
     # via
     #   -r testing.txt
     #   pytest-cov
-django==3.2.4
+django==3.2.5
     # via
     #   -r base.txt
     #   djangorestframework
@@ -57,7 +57,7 @@ mypy-extensions==0.4.3
     #   mypy
 mypy==0.910
     # via -r development.txt
-packaging==20.9
+packaging==21.0
     # via
     #   -r testing.txt
     #   pytest
@@ -98,7 +98,7 @@ pytz==2021.1
     # via
     #   -r base.txt
     #   django
-regex==2021.4.4
+regex==2021.7.1
     # via
     #   -r development.txt
     #   black
