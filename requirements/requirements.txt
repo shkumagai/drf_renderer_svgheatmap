@@ -44,7 +44,7 @@ iniconfig==1.1.1
     # via
     #   -r testing.txt
     #   pytest
-isort==5.9.1
+isort==5.9.2
     # via -r development.txt
 mccabe==0.6.1
     # via
@@ -98,7 +98,7 @@ pytz==2021.1
     # via
     #   -r base.txt
     #   django
-regex==2021.7.1
+regex==2021.7.6
     # via
     #   -r development.txt
     #   black

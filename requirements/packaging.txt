@@ -26,7 +26,7 @@ keyring==23.0.1
     # via twine
 packaging==21.0
     # via bleach
-pkginfo==1.7.0
+pkginfo==1.7.1
     # via twine
 pygments==2.9.0
     # via readme-renderer
@@ -46,7 +46,7 @@ six==1.16.0
     # via
     #   bleach
     #   readme-renderer
-tqdm==4.61.1
+tqdm==4.61.2
     # via twine
 twine==3.4.1
     # via -r packaging.in
