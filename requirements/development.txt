@@ -26,7 +26,7 @@ mypy-extensions==0.4.3
     #   mypy
 mypy==0.910
     # via -r development.in
-pathspec==0.8.1
+pathspec==0.9.0
     # via black
 pycodestyle==2.7.0
     # via flake8
