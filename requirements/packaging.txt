@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=packaging.txt packaging.in
 #
-bleach==3.3.1
+bleach==4.0.0
     # via readme-renderer
 certifi==2021.5.30
     # via requests
