@@ -18,17 +18,17 @@ idna==3.2
     # via
     #   -r packaging.in
     #   requests
-importlib-metadata==4.6.3
+importlib-metadata==4.6.4
     # via
     #   keyring
     #   twine
-keyring==23.0.1
+keyring==23.1.0
     # via twine
 packaging==21.0
     # via bleach
 pkginfo==1.7.1
     # via twine
-pygments==2.9.0
+pygments==2.10.0
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
@@ -46,7 +46,7 @@ six==1.16.0
     # via
     #   bleach
     #   readme-renderer
-tqdm==4.62.0
+tqdm==4.62.1
     # via twine
 twine==3.4.2
     # via -r packaging.in
@@ -54,7 +54,7 @@ urllib3==1.26.6
     # via requests
 webencodings==0.5.1
     # via bleach
-wheel==0.36.2
+wheel==0.37.0
     # via -r packaging.in
 zipp==3.5.0
     # via importlib-metadata
