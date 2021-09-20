@@ -102,7 +102,7 @@ regex==2021.8.28
     # via
     #   -r development.txt
     #   black
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via
     #   -r base.txt
     #   django
