@@ -85,7 +85,7 @@ pyparsing==2.4.7
     # via
     #   -r testing.txt
     #   packaging
-pytest==6.2.4
+pytest==6.2.5
     # via
     #   -r testing.txt
     #   pytest-cov
