@@ -32,7 +32,7 @@ pygments==2.10.0
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
-readme-renderer==29.0
+readme-renderer==30.0
     # via twine
 requests==2.26.0
     # via
