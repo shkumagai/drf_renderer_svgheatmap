@@ -115,7 +115,7 @@ toml==0.10.2
     #   mypy
     #   pytest
     #   pytest-cov
-tomli==1.2.0
+tomli==1.2.1
     # via
     #   -r development.txt
     #   black
