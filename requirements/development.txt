@@ -36,7 +36,7 @@ regex==2021.9.30
     # via black
 toml==0.10.2
     # via mypy
-tomli==1.2.0
+tomli==1.2.1
     # via black
 typing-extensions==3.10.0.1
     # via mypy
