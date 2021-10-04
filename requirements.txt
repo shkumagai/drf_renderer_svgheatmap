@@ -22,7 +22,7 @@ click==8.0.1
     # via
     #   -r development.txt
     #   black
-coverage==5.5
+coverage==6.0
     # via
     #   -r testing.txt
     #   pytest-cov
