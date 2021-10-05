@@ -8,7 +8,7 @@ bleach==4.1.0
     # via readme-renderer
 certifi==2021.5.30
     # via requests
-charset-normalizer==2.0.4
+charset-normalizer==2.0.6
     # via requests
 colorama==0.4.4
     # via twine
@@ -22,7 +22,7 @@ importlib-metadata==4.8.1
     # via
     #   keyring
     #   twine
-keyring==23.1.0
+keyring==23.2.1
     # via twine
 packaging==21.0
     # via bleach
@@ -32,7 +32,7 @@ pygments==2.10.0
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
-readme-renderer==29.0
+readme-renderer==30.0
     # via twine
 requests==2.26.0
     # via
@@ -46,15 +46,15 @@ six==1.16.0
     # via
     #   bleach
     #   readme-renderer
-tqdm==4.62.2
+tqdm==4.62.3
     # via twine
 twine==3.4.2
     # via -r packaging.in
-urllib3==1.26.6
+urllib3==1.26.7
     # via requests
 webencodings==0.5.1
     # via bleach
 wheel==0.37.0
     # via -r packaging.in
-zipp==3.5.0
+zipp==3.6.0
     # via importlib-metadata
