@@ -47,6 +47,7 @@ def pytest_configure(config):
         SECRET_KEY="not very secret in tests",
         USE_I18N=True,
         USE_L10N=True,
+        # USE_DEPRECATED_PYTZ=False,
         STATIC_URL="/static/",
         ROOT_URLCONF="tests.urls",
         TEMPLATES=[
