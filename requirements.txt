@@ -77,7 +77,7 @@ pycodestyle==2.8.0
     # via
     #   -r development.txt
     #   flake8
-pyflakes==2.3.1
+pyflakes==2.4.0
     # via
     #   -r development.txt
     #   flake8
