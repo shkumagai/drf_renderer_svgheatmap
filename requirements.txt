@@ -81,7 +81,7 @@ pyflakes==2.4.0
     # via
     #   -r development.txt
     #   flake8
-pyparsing==2.4.7
+pyparsing==3.0.4
     # via
     #   -r testing.txt
     #   packaging
