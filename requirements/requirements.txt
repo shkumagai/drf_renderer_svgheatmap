@@ -16,17 +16,17 @@ attrs==21.2.0
     # via
     #   -r testing.txt
     #   pytest
-black==21.9b0
+black==21.10b0
     # via -r development.txt
 click==8.0.3
     # via
     #   -r development.txt
     #   black
-coverage==6.0.2
+coverage==6.1.1
     # via
     #   -r testing.txt
     #   pytest-cov
-django==3.2.8
+django==3.2.9
     # via
     #   -r base.txt
     #   djangorestframework
@@ -57,7 +57,7 @@ mypy-extensions==0.4.3
     #   -r development.txt
     #   black
     #   mypy
-packaging==21.0
+packaging==21.2
     # via
     #   -r testing.txt
     #   pytest
@@ -81,7 +81,7 @@ pyflakes==2.4.0
     # via
     #   -r development.txt
     #   flake8
-pyparsing==2.4.7
+pyparsing==3.0.4
     # via
     #   -r testing.txt
     #   packaging
@@ -98,7 +98,7 @@ pytz==2021.3
     # via
     #   -r base.txt
     #   django
-regex==2021.10.8
+regex==2021.10.23
     # via
     #   -r development.txt
     #   black
@@ -115,7 +115,7 @@ toml==0.10.2
     #   mypy
     #   pytest
     #   pytest-cov
-tomli==1.2.1
+tomli==1.2.2
     # via
     #   -r development.txt
     #   black
