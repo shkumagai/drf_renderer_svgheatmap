@@ -44,7 +44,7 @@ iniconfig==1.1.1
     # via
     #   -r testing.txt
     #   pytest
-isort==5.9.3
+isort==5.10.0
     # via -r development.txt
 mccabe==0.6.1
     # via
