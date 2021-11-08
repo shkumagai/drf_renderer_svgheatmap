@@ -69,7 +69,7 @@ pluggy==1.0.0
     # via
     #   -r testing.txt
     #   pytest
-py==1.10.0
+py==1.11.0
     # via
     #   -r testing.txt
     #   pytest
