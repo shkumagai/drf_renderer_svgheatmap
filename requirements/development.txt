@@ -32,7 +32,7 @@ pycodestyle==2.8.0
     # via flake8
 pyflakes==2.4.0
     # via flake8
-regex==2021.10.23
+regex==2021.11.2
     # via black
 toml==0.10.2
     # via mypy
