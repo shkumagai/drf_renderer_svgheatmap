@@ -30,7 +30,7 @@ pkginfo==1.7.1
     # via twine
 pygments==2.10.0
     # via readme-renderer
-pyparsing==3.0.4
+pyparsing==3.0.5
     # via packaging
 readme-renderer==30.0
     # via twine
