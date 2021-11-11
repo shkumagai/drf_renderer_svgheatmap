@@ -44,7 +44,7 @@ iniconfig==1.1.1
     # via
     #   -r testing.txt
     #   pytest
-isort==5.9.3
+isort==5.10.0
     # via -r development.txt
 mccabe==0.6.1
     # via
@@ -69,7 +69,7 @@ pluggy==1.0.0
     # via
     #   -r testing.txt
     #   pytest
-py==1.10.0
+py==1.11.0
     # via
     #   -r testing.txt
     #   pytest
@@ -81,7 +81,7 @@ pyflakes==2.4.0
     # via
     #   -r development.txt
     #   flake8
-pyparsing==3.0.4
+pyparsing==3.0.5
     # via
     #   -r testing.txt
     #   packaging
@@ -98,7 +98,7 @@ pytz==2021.3
     # via
     #   -r base.txt
     #   django
-regex==2021.10.23
+regex==2021.11.2
     # via
     #   -r development.txt
     #   black

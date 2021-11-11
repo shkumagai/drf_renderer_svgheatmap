@@ -30,7 +30,7 @@ pkginfo==1.7.1
     # via twine
 pygments==2.10.0
     # via readme-renderer
-pyparsing==3.0.4
+pyparsing==3.0.5
     # via packaging
 readme-renderer==30.0
     # via twine
@@ -48,7 +48,7 @@ six==1.16.0
     #   readme-renderer
 tqdm==4.62.3
     # via twine
-twine==3.4.2
+twine==3.5.0
     # via -r packaging.in
 urllib3==1.26.7
     # via requests
