@@ -119,7 +119,7 @@ tomli==1.2.2
     # via
     #   -r development.txt
     #   black
-typing-extensions==3.10.0.2
+typing-extensions==4.0.0
     # via
     #   -r development.txt
     #   mypy
