@@ -22,7 +22,7 @@ click==8.0.3
     # via
     #   -r development.txt
     #   black
-coverage==6.1.1
+coverage==6.1.2
     # via
     #   -r testing.txt
     #   pytest-cov
@@ -44,7 +44,7 @@ iniconfig==1.1.1
     # via
     #   -r testing.txt
     #   pytest
-isort==5.10.0
+isort==5.10.1
     # via -r development.txt
 mccabe==0.6.1
     # via
@@ -81,7 +81,7 @@ pyflakes==2.4.0
     # via
     #   -r development.txt
     #   flake8
-pyparsing==3.0.5
+pyparsing==3.0.6
     # via
     #   -r testing.txt
     #   packaging
@@ -98,7 +98,7 @@ pytz==2021.3
     # via
     #   -r base.txt
     #   django
-regex==2021.11.2
+regex==2021.11.10
     # via
     #   -r development.txt
     #   black
@@ -119,7 +119,7 @@ tomli==1.2.2
     # via
     #   -r development.txt
     #   black
-typing-extensions==3.10.0.2
+typing-extensions==4.0.0
     # via
     #   -r development.txt
     #   mypy
