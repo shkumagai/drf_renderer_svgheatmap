@@ -57,7 +57,7 @@ mypy-extensions==0.4.3
     #   -r development.txt
     #   black
     #   mypy
-packaging==21.2
+packaging==21.3
     # via
     #   -r testing.txt
     #   pytest
