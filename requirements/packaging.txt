@@ -24,9 +24,9 @@ importlib-metadata==4.8.2
     #   twine
 keyring==23.2.1
     # via twine
-packaging==21.2
+packaging==21.3
     # via bleach
-pkginfo==1.7.1
+pkginfo==1.8.1
     # via twine
 pygments==2.10.0
     # via readme-renderer
