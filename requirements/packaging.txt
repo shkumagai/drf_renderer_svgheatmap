@@ -22,7 +22,7 @@ importlib-metadata==4.8.2
     # via
     #   keyring
     #   twine
-keyring==23.2.1
+keyring==23.4.0
     # via twine
 packaging==21.3
     # via bleach
