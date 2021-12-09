@@ -24,7 +24,7 @@ coverage[toml]==6.2
     # via
     #   -r testing.txt
     #   pytest-cov
-django==3.2.10
+django==4.0
     # via
     #   -r base.txt
     #   djangorestframework
@@ -94,10 +94,6 @@ pytest-cov==3.0.0
     # via -r testing.txt
 pytest-django==4.5.1
     # via -r testing.txt
-pytz==2021.3
-    # via
-    #   -r base.txt
-    #   django
 regex==2021.11.10
     # via -r development.txt
 sqlparse==0.4.2
