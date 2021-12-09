@@ -71,7 +71,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7
+          python-version: 3.9
 
       - name: Install tox and any other packages for test
         run: pip install tox
