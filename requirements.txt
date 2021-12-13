@@ -92,7 +92,7 @@ pytest==6.2.5
     #   pytest-django
 pytest-cov==3.0.0
     # via -r testing.txt
-pytest-django==4.5.1
+pytest-django==4.5.2
     # via -r testing.txt
 regex==2021.11.10
     # via -r development.txt
