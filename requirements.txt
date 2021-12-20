@@ -108,7 +108,7 @@ toml==0.10.2
     #   -r testing.txt
     #   mypy
     #   pytest
-tomli==1.2.2
+tomli==2.0.0
     # via
     #   -r development.txt
     #   black
