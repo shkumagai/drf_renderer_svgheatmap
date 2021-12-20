@@ -10,7 +10,7 @@ django==4.0
     # via
     #   -r base.in
     #   djangorestframework
-djangorestframework==3.13.0
+djangorestframework==3.13.1
     # via -r base.in
 sqlparse==0.4.2
     # via django
