@@ -28,7 +28,7 @@ django==4.0
     # via
     #   -r base.txt
     #   djangorestframework
-djangorestframework==3.13.0
+djangorestframework==3.13.1
     # via -r base.txt
 flake8==4.0.1
     # via -r development.txt
@@ -48,7 +48,7 @@ mccabe==0.6.1
     # via
     #   -r development.txt
     #   flake8
-mypy==0.910
+mypy==0.920
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
@@ -108,7 +108,7 @@ toml==0.10.2
     #   -r testing.txt
     #   mypy
     #   pytest
-tomli==1.2.2
+tomli==2.0.0
     # via
     #   -r development.txt
     #   black

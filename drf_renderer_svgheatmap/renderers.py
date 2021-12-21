@@ -22,6 +22,8 @@ from svgwrite.shapes import Rect
 
 # Data types
 Point = Dict[str, int]
+Width = Union[str, int]
+Height = Union[str, int]
 DataContainer = List[Point]
 ColorScale = List[str]
 
@@ -58,8 +60,8 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
     def translate(
         self,
         data: DataContainer,
-        width: int,
-        height: int,
+        width: Width,
+        height: Height,
         x_key: str = "x",
         y_key: str = "y",
         v_key: str = "value",
@@ -104,15 +106,20 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
             "colorScale": getattr(view, "color_scale", DEFAULT_COLOR_SCALE),
             "grid": getattr(view, "grid", GRID),
             "opacity": getattr(view, "opacity", OPACITY),
-            "x_key": getattr(view, "x_key", "x"),
-            "y_key": getattr(view, "y_key", "y"),
-            "v_key": getattr(view, "v_key", "value"),
-            "is_1d": getattr(view, "is_1d", False),
         }
 
         svg_render_map = getattr(view, "svg_render_map", None)
         bare_data = data if svg_render_map is None else data[svg_render_map]
-        datagroup = self.translate(bare_data, width, height, **translatorArgs)
+        datagroup = self.translate(
+            bare_data,
+            width,
+            height,
+            x_key=getattr(view, "x_key", "x"),
+            y_key=getattr(view, "y_key", "y"),
+            v_key=getattr(view, "v_key", "value"),
+            is_1d=getattr(view, "is_1d", False),
+            **translatorArgs,
+        )
 
         drawSize = (width, height)
         svgargs = getattr(view, "svgargs", {})
@@ -130,8 +137,8 @@ class SimpleSVGHeatmapRenderer(BaseSVGHeatmapRenderer):
     def translate(
         self,
         data: DataContainer,
-        width: int,
-        height: int,
+        width: Width,
+        height: Height,
         x_key: str = "x",
         y_key: str = "y",
         v_key: str = "value",
