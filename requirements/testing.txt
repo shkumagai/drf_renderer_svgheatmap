@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=testing.txt testing.in
 #
-attrs==21.2.0
+attrs==21.4.0
     # via pytest
 coverage==6.2
     # via pytest-cov
