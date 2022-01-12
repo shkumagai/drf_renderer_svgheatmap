@@ -24,7 +24,7 @@ coverage[toml]==6.2
     # via
     #   -r testing.txt
     #   pytest-cov
-django==4.0
+django==4.0.1
     # via
     #   -r base.txt
     #   djangorestframework
@@ -48,7 +48,7 @@ mccabe==0.6.1
     # via
     #   -r development.txt
     #   flake8
-mypy==0.930
+mypy==0.931
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
