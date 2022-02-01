@@ -6,7 +6,7 @@
 #
 appdirs==1.4.4
     # via black
-black==21.12b0
+black==22.1.0
     # via -r development.in
 click==8.0.3
     # via black
@@ -18,7 +18,7 @@ flake8-return==1.1.3
     # via -r development.in
 isort==5.10.1
     # via -r development.in
-mccabe==0.6.1
+mccabe==0.7.0
     # via flake8
 mypy==0.931
     # via -r development.in
@@ -32,7 +32,7 @@ pycodestyle==2.8.0
     # via flake8
 pyflakes==2.4.0
     # via flake8
-regex==2021.11.10
+regex==2022.1.18
     # via black
 toml==0.10.2
     # via mypy
