@@ -20,7 +20,7 @@ click==8.0.3
     # via
     #   -r development.txt
     #   black
-coverage[toml]==6.3
+coverage[toml]==6.3.1
     # via
     #   -r testing.txt
     #   pytest-cov
