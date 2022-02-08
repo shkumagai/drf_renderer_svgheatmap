@@ -20,11 +20,11 @@ click==8.0.3
     # via
     #   -r development.txt
     #   black
-coverage[toml]==6.3
+coverage[toml]==6.3.1
     # via
     #   -r testing.txt
     #   pytest-cov
-django==4.0.1
+django==4.0.2
     # via
     #   -r base.txt
     #   djangorestframework
@@ -85,7 +85,7 @@ pyparsing==3.0.7
     # via
     #   -r testing.txt
     #   packaging
-pytest==6.2.5
+pytest==7.0.0
     # via
     #   -r testing.txt
     #   pytest-cov
