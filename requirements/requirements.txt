@@ -112,7 +112,7 @@ tomli==2.0.1
     # via
     #   -r development.txt
     #   black
-typing-extensions==4.0.1
+typing-extensions==4.1.1
     # via
     #   -r development.txt
     #   black
