@@ -16,11 +16,11 @@ attrs==21.4.0
     #   pytest
 black==22.1.0
     # via -r development.txt
-click==8.0.3
+click==8.0.4
     # via
     #   -r development.txt
     #   black
-coverage[toml]==6.3.1
+coverage[toml]==6.3.2
     # via
     #   -r testing.txt
     #   pytest-cov
@@ -63,7 +63,7 @@ pathspec==0.9.0
     # via
     #   -r development.txt
     #   black
-platformdirs==2.5.0
+platformdirs==2.5.1
     # via black
 pluggy==1.0.0
     # via
