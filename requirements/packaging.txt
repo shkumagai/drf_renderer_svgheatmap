@@ -18,7 +18,7 @@ idna==3.3
     # via
     #   -r packaging.in
     #   requests
-importlib-metadata==4.11.1
+importlib-metadata==4.11.2
     # via
     #   keyring
     #   twine
@@ -46,7 +46,7 @@ six==1.16.0
     # via
     #   bleach
     #   readme-renderer
-tqdm==4.62.3
+tqdm==4.63.0
     # via twine
 twine==3.8.0
     # via -r packaging.in
