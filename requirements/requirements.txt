@@ -48,7 +48,7 @@ mccabe==0.7.0
     # via
     #   -r development.txt
     #   flake8
-mypy==0.931
+mypy==0.941
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
@@ -85,7 +85,7 @@ pyparsing==3.0.7
     # via
     #   -r testing.txt
     #   packaging
-pytest==7.0.1
+pytest==7.1.0
     # via
     #   -r testing.txt
     #   pytest-cov
