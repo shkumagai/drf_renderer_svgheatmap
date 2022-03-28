@@ -14,5 +14,5 @@ djangorestframework==3.13.1
     # via -r base.in
 sqlparse==0.4.2
     # via django
-svgwrite==1.4.1
+svgwrite==1.4.2
     # via -r base.in
