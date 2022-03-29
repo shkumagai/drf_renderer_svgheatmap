@@ -16,7 +16,7 @@ attrs==21.4.0
     #   pytest
 black==22.1.0
     # via -r development.txt
-click==8.0.4
+click==8.1.0
     # via
     #   -r development.txt
     #   black
@@ -48,7 +48,7 @@ mccabe==0.7.0
     # via
     #   -r development.txt
     #   flake8
-mypy==0.941
+mypy==0.942
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
@@ -100,7 +100,7 @@ sqlparse==0.4.2
     # via
     #   -r base.txt
     #   django
-svgwrite==1.4.1
+svgwrite==1.4.2
     # via -r base.txt
 toml==0.10.2
     # via
