@@ -46,9 +46,9 @@ six==1.16.0
     # via
     #   bleach
     #   readme-renderer
-tqdm==4.63.1
+tqdm==4.64.0
     # via twine
-twine==3.8.0
+twine==4.0.0
     # via -r packaging.in
 urllib3==1.26.9
     # via requests
@@ -56,5 +56,5 @@ webencodings==0.5.1
     # via bleach
 wheel==0.37.1
     # via -r packaging.in
-zipp==3.7.0
+zipp==3.8.0
     # via importlib-metadata

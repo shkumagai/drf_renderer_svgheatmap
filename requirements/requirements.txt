@@ -14,9 +14,9 @@ attrs==21.4.0
     # via
     #   -r testing.txt
     #   pytest
-black==22.1.0
+black==22.3.0
     # via -r development.txt
-click==8.1.0
+click==8.1.2
     # via
     #   -r development.txt
     #   black
