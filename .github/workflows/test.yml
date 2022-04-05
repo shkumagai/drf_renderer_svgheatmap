@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        env: [flake8, isort, readme, check-manifest, mypy]
+        env: [flake8, isort, readme, mypy]
 
     steps:
       - name: Checkout code
