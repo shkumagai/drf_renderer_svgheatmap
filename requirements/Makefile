@@ -1,4 +1,4 @@
-PIP_COMPILE_CMD := $(shell basename $$(which pip-compile) || echo "pipx run --spec=pip-tools pip-compile")
+PIP_COMPILE_CMD := pipx run --spec=pip-tools pip-compile
 SRCS := base.in development.in packaging.in testing.in
 OBJS := $(SRCS:%.in=%.txt)
 

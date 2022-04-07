@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-appdirs==1.4.4
-    # via -r development.txt
 asgiref==3.5.0
     # via
     #   -r base.txt
@@ -24,7 +22,7 @@ coverage[toml]==6.3.2
     # via
     #   -r testing.txt
     #   pytest-cov
-django==4.0.3
+django==3.2.12
     # via
     #   -r base.txt
     #   djangorestframework
@@ -44,7 +42,7 @@ iniconfig==1.1.1
     #   pytest
 isort==5.10.1
     # via -r development.txt
-mccabe==0.7.0
+mccabe==0.6.1
     # via
     #   -r development.txt
     #   flake8
@@ -64,7 +62,9 @@ pathspec==0.9.0
     #   -r development.txt
     #   black
 platformdirs==2.5.1
-    # via black
+    # via
+    #   -r development.txt
+    #   black
 pluggy==1.0.0
     # via
     #   -r testing.txt
@@ -94,24 +94,25 @@ pytest-cov==3.0.0
     # via -r testing.txt
 pytest-django==4.5.2
     # via -r testing.txt
-regex==2022.3.15
-    # via -r development.txt
+pytz==2022.1
+    # via
+    #   -r base.txt
+    #   django
+    #   djangorestframework
 sqlparse==0.4.2
     # via
     #   -r base.txt
     #   django
 svgwrite==1.4.2
     # via -r base.txt
-toml==0.10.2
-    # via
-    #   -r development.txt
-    #   -r testing.txt
-    #   mypy
-    #   pytest
 tomli==2.0.1
     # via
     #   -r development.txt
+    #   -r testing.txt
     #   black
+    #   coverage
+    #   mypy
+    #   pytest
 typing-extensions==4.1.1
     # via
     #   -r development.txt

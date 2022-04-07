@@ -6,12 +6,16 @@
 #
 asgiref==3.5.0
     # via django
-django==4.0.3
+django==3.2.12
     # via
     #   -r base.in
     #   djangorestframework
 djangorestframework==3.13.1
     # via -r base.in
+pytz==2022.1
+    # via
+    #   django
+    #   djangorestframework
 sqlparse==0.4.2
     # via django
 svgwrite==1.4.2
