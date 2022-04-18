@@ -36,7 +36,7 @@ tomli==2.0.1
     # via
     #   black
     #   mypy
-typing-extensions==4.1.1
+typing-extensions==4.2.0
     # via
     #   black
     #   mypy
