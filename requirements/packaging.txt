@@ -28,7 +28,7 @@ packaging==21.3
     # via bleach
 pkginfo==1.8.2
     # via twine
-pygments==2.11.2
+pygments==2.12.0
     # via
     #   readme-renderer
     #   rich
