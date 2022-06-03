@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=base.txt base.in
 #
-asgiref==3.5.0
+asgiref==3.5.2
     # via django
 django==4.0.4
     # via
