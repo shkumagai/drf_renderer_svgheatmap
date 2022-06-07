@@ -18,11 +18,11 @@ click==8.1.3
     # via
     #   -r development.txt
     #   black
-coverage[toml]==6.4
+coverage[toml]==6.4.1
     # via
     #   -r testing.txt
     #   pytest-cov
-django==4.0.4
+django==4.0.5
     # via
     #   -r base.txt
     #   djangorestframework
@@ -46,7 +46,7 @@ mccabe==0.7.0
     # via
     #   -r development.txt
     #   flake8
-mypy==0.960
+mypy==0.961
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
