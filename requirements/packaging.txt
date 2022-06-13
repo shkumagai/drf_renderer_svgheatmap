@@ -26,7 +26,7 @@ keyring==23.6.0
     # via twine
 packaging==21.3
     # via bleach
-pkginfo==1.8.2
+pkginfo==1.8.3
     # via twine
 pygments==2.12.0
     # via
