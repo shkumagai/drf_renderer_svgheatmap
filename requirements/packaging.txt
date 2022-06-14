@@ -22,11 +22,11 @@ importlib-metadata==4.11.4
     # via
     #   keyring
     #   twine
-keyring==23.5.1
+keyring==23.6.0
     # via twine
 packaging==21.3
     # via bleach
-pkginfo==1.8.2
+pkginfo==1.8.3
     # via twine
 pygments==2.12.0
     # via
@@ -36,7 +36,7 @@ pyparsing==3.0.9
     # via packaging
 readme-renderer==35.0
     # via twine
-requests==2.27.1
+requests==2.28.0
     # via
     #   requests-toolbelt
     #   twine
