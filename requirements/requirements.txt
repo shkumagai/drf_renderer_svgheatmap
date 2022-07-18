@@ -102,7 +102,7 @@ sqlparse==0.4.2
     # via
     #   -r base.txt
     #   django
-svgwrite==1.4.2
+svgwrite==1.4.3
     # via -r base.txt
 tomli==2.0.1
     # via
