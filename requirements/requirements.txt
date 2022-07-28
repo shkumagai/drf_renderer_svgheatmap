@@ -42,11 +42,11 @@ iniconfig==1.1.1
     #   pytest
 isort==5.10.1
     # via -r development.txt
-mccabe==0.7.0
+mccabe==0.6.1
     # via
     #   -r development.txt
     #   flake8
-mypy==0.961
+mypy==0.971
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
@@ -115,5 +115,4 @@ tomli==2.0.1
 typing-extensions==4.3.0
     # via
     #   -r development.txt
-    #   black
     #   mypy
