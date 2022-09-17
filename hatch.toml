@@ -1,0 +1,83 @@
+[version]
+path = "drf_renderer_svgheatmap/__init__.py"
+
+[build]
+exclude = [
+    ".github",
+]
+
+[envs.default]
+dependencies = [
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+]
+
+[envs.default.scripts]
+simple = "python -m pytest -vv {args:tests}"
+cov = "simple --cov-config=pyproject.toml --cov=drf_renderer_svgheatmap"
+term = "cov --cov-report=term-missing"
+html = "cov --cov-report=html"
+
+[envs.test]
+temaplte = "default"
+
+[[envs.test.matrix]]
+python = ["37", "38", "39", "310"]
+extra-dependencies = [
+    "Django ~= 3.2",
+]
+
+[[envs.test.matrix]]
+python = ["38", "39", "310", "311"]
+extra-dependencies = [
+    "Django ~= 4.0",
+]
+
+[[envs.test.matrix]]
+python = ["38", "39", "310", "311"]
+extra-dependencies = [
+    "Django ~= 4.1",
+]
+
+# [[envs.test.matrix]]
+# python = ["38", "39", "310", "311"]
+# extra-dependencies = [
+#     "Django @ https://github.com/django/django/archive/main.tar.gz",
+# ]
+
+[envs.lint]
+detached = true
+dependencies = [
+    "bandit[toml]",
+    "black",
+    "flake8",
+    "flake8-copyright",
+    "flake8-return",
+    "flake8-print",
+    "flake8-string-format",
+    "isort",
+    "readme",
+    "mypy",
+]
+
+[envs.lint.scripts]
+full = [
+    "fmt",
+    "style",
+    "readme",
+    "typing",
+    "security",
+]
+security = "bandit -r {args:drf_renderer_svgheatmap}"
+style = [
+    "python -m black --check --diff {args:drf_renderer_svgheatmap tests}",
+    "python -m isort --check-only --diff {args:drf_renderer_svgheatmap tests}",
+    "python -m flake8",
+]
+readme = "python -m readme_renderer README.rst 2>&1 >/dev/null"
+typing = "python -m mypy {args:drf_renderer_svgheatmap}"
+fmt = [
+    "python -m black {args:drf_renderer_svgheatmap tests}",
+    "python -m isort {args:drf_renderer_svgheatmap tests}",
+]

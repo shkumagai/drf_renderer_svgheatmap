@@ -17,11 +17,11 @@
 SVG Heatmap renderer for Django REST Framework.
 """
 
-__title__: str = 'DRF Renderer SVGHeatmap'
-__version__: str = '0.1.0'
-__author__: str = 'Shoji Kumagai'
-__email__: str = 'take.this.2.your.grave@gmail.com'
-__license__: str = 'Apache License 2.0'
+__title__ = "DRF Renderer SVGHeatmap"
+__version__ = "0.1.0"
+__author__ = "Shoji Kumagai"
+__email__ = "take.this.2.your.grave@gmail.com"
+__license__ = "Apache License 2.0"
 
-VERSION: str = __version__
-name: str = 'drf_renderer_svgheatmap'
+VERSION = __version__
+name = "drf_renderer_svgheatmap"

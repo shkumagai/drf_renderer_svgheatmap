@@ -38,8 +38,8 @@ wants to implement it.
 Write Documentation
 -------------------
 
-Django Horizon could always use more documentation, whether as part of the
-official Django Horizon docs, in docstrings, or even on the web in blog posts,
+DRF renderer svgheatmap could always use more documentation, whether as part of the
+official DRF renderer svgheatmap docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
@@ -106,7 +106,7 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.7, 3.4, 3.5, 3.6 and 3.7, and for PyPy.
+3. The pull request should work for Python 3.7, 3.8, 3.9, 3.10 and 3.11.
    Check https://travis-ci.org/shkumagai/drf_renderer_svgheatmap/pull_requests
    and make sure that the tests pass for all supported Python versions.
 

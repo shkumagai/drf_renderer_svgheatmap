@@ -49,5 +49,4 @@ if __name__ == "__main__":
     else:
         pytest_args = PYTEST_ARGS[style]
 
-    print(" ".join(pytest_args))
     exit_on_failure(pytest.main(pytest_args))
