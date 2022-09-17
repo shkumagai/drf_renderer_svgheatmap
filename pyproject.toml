@@ -1,6 +1,48 @@
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.9.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "drf_renderer_svgheatmap"
+description = "SVG Heatmap renderer for Django REST Framework"
+requires-python = ">=3.6"
+license = "Apache-2.0"
+authors = [
+    { name = "Shoji Kumagai", email = "take.this.2.your.grave@gmail.com" },
+]
+keywords = ["Django", "restframework", "svg", "renderer"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "Django",
+    "djangorestframework",
+    "svgwrite >= 1.4.3",
+]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/shkumagai/drf_renderer_svgheatmap"
+"issue tracker" = "https://github.com/shkumagai/drf_renderer_svgheatmap/issues"
+
+[tool.black]
+
+[tool.bandit]
+skips = ["B101"]
 
 [tool.isort]
 profile = "black"
@@ -10,8 +52,7 @@ line_length = 80
 multi_line_output = 3
 
 [tool.pytest.ini_options]
-addopts = "--tb=short --strict -ra --verbose --cov=drf_renderer_svgheatmap --cov-report=term-missing"
-testspath = ["tests"]
+minversion = 6.0
 
 [tool.mypy]
 strict_optional = true
@@ -21,3 +62,10 @@ warn_no_return = false
 show_traceback = true
 allow_redefinition = true
 incremental = true
+
+[tool.coverage.run]
+branch = true
+source = ["drf_renderer_svgheatmap"]
+
+[tool.coverage.report]
+skip_empty = true
