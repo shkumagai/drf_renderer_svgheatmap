@@ -18,7 +18,7 @@ isort==5.10.1
     # via -r development.in
 mccabe==0.6.1
     # via flake8
-mypy==0.982
+mypy==0.990
     # via -r development.in
 mypy-extensions==0.4.3
     # via
@@ -32,9 +32,5 @@ pycodestyle==2.8.0
     # via flake8
 pyflakes==2.4.0
     # via flake8
-tomli==2.0.1
-    # via
-    #   black
-    #   mypy
 typing-extensions==4.3.0
     # via mypy
