@@ -48,7 +48,7 @@ mccabe==0.6.1
     # via
     #   -r development.txt
     #   flake8
-mypy==0.982
+mypy==0.991
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
@@ -103,9 +103,7 @@ sqlparse==0.4.2
 svgwrite==1.4.3
     # via -r base.txt
 tomli==2.0.1
-    # via
-    #   -r development.txt
-    #   -r testing.txt
+    # via -r testing.txt
 typing-extensions==4.3.0
     # via
     #   -r development.txt
