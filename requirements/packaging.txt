@@ -54,7 +54,7 @@ secretstorage==3.3.3
     # via keyring
 six==1.16.0
     # via bleach
-twine==4.0.1
+twine==4.0.2
     # via -r packaging.in
 urllib3==1.26.10
     # via
