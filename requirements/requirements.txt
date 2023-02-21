@@ -46,7 +46,7 @@ mccabe==0.7.0
     # via
     #   -r development.txt
     #   flake8
-mypy==1.0.0
+mypy==1.0.1
     # via -r development.txt
 mypy-extensions==0.4.3
     # via
