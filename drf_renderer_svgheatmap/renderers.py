@@ -124,7 +124,10 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
         drawSize = (width, height)
         svgargs = getattr(view, "svgargs", {})
         drawing = Drawing(
-            self.filename, size=drawSize, profile=self.svg_profile, **svgargs
+            self.filename,
+            size=drawSize,
+            profile=self.svg_profile,
+            **svgargs,
         )
         drawing.add(datagroup)
 

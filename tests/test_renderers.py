@@ -13,8 +13,8 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-import random
 import re
+import secrets
 from math import ceil
 
 from rest_framework import status
@@ -34,9 +34,9 @@ EMPTYCONTENT = []
 def generatePoints(grid=32, length=360, is_1d=False):
     points = [
         {
-            "x": random.randint(0, grid - 1),
-            "y": random.randint(0, grid * 2 - 1),
-            "value": random.randint(1, 1000),
+            "x": secrets.randbelow(grid - 1),
+            "y": secrets.randbelow(grid * 2 - 1),
+            "value": secrets.randbelow(999) + 1,
         }
         for i in range(length)
     ]
@@ -79,7 +79,7 @@ re_svgroot = re.compile(
     \ xmlns:ev="http://www.w3.org/2001/xml-events"
     \ xmlns:xlink="http://www.w3.org/1999/xlink">.+</svg>$
     """.encode(
-        "utf-8"
+        "utf-8",
     ),
     re.X,
 )
@@ -184,7 +184,7 @@ re_rectnode = re.compile(
     \ y="[.0-9%]+">             # inserted y position
     <title>\d+%</title>         # tip content
     </rect>""".encode(
-        "utf-8"
+        "utf-8",
     ),
     re.X,
 )
