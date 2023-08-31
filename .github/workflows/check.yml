@@ -5,23 +5,20 @@ on: [push]
 jobs:
   lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        env: ['style', 'security', 'readme', 'typing']
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
-      - name: Setup python
-        uses: actions/setup-python@v4
+      - uses: pdm-project/setup-pdm@v3
         with:
-          python-version: 3.9
+          python-version: "3.11"
 
-      - name: Install hatch
-        run: pip install hatch
+      - name: install test tools
+        run: pdm sync -d
 
-      - name: Run lint:${{ matrix.env }}
-        run: hatch run lint:${{ matrix.env }}
+      - name: run lint
+        run: |
+          pdm run pip list
+          pdm run nox -t lint

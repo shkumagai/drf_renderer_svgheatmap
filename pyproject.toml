@@ -1,12 +1,12 @@
 [build-system]
-requires = ["hatchling>=1.9.0"]
-build-backend = "hatchling.build"
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
 
 [project]
 name = "drf_renderer_svgheatmap"
 description = "SVG Heatmap renderer for Django REST Framework"
-requires-python = ">=3.6"
-license = "Apache-2.0"
+requires-python = ">=3.7"
+license = { text = "Apache-2.0" }
 authors = [
     { name = "Shoji Kumagai", email = "take.this.2.your.grave@gmail.com" },
 ]
@@ -21,7 +21,6 @@ classifiers = [
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -38,6 +37,19 @@ dynamic = ["version"]
 [project.urls]
 repository = "https://github.com/shkumagai/drf_renderer_svgheatmap"
 "issue tracker" = "https://github.com/shkumagai/drf_renderer_svgheatmap/issues"
+
+[tool.pdm]
+version = { source = "file", path = "drf_renderer_svgheatmap/__init__.py" }
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "nox",
+]
+testing = [
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+]
 
 [tool.black]
 
