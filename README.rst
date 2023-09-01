@@ -2,21 +2,33 @@
 DRF Renderer SVGHeatmap
 =======================
 
-.. image:: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg?branch=master
+.. list-table:: Category badge
+    :width: 50 100
+    :header-row: 1
+
+    * - Category
+      - Badge
+    * - CI
+      - |ci_test|
+    * - Package
+      - |py_ver| |dj_ver|
+    * - Meta
+      -
+
+
+.. |ci_test| image:: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg?branch=master
     :target: https://github.com/shkumagai/drf_renderer_svgheatmap/workflows/Test/badge.svg?branch=master
     :alt: master
 
-.. image:: https://codecov.io/gh/shkumagai/drf_renderer_svgheatmap/branch/master/graph/badge.svg
+.. |codecov| image:: https://codecov.io/gh/shkumagai/drf_renderer_svgheatmap/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/shkumagai/drf_renderer_svgheatmap
     :alt: Coverage
 
-.. image:: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/shield.svg
-    :target: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/
-    :alt: Updates
+.. |py_ver| image:: https://img.shields.io/badge/support%20version-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue.svg?logo=python&logoColor=F9DC3E
+    :alt: Support Python version
 
-.. image:: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/python-3-shield.svg
-    :target: https://pyup.io/repos/github/shkumagai/drf_renderer_svgheatmap/
-    :alt: Python 3
+.. |dj_ver| image:: https://img.shields.io/badge/support%20version-3.2%20%7C%204.0%20%7C%204.1-green.svg?logo=django&logoColor=F9DC3E
+    :alt: Support Django version
 
 Purpose
 =======
