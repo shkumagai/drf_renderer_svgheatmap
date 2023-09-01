@@ -1,13 +1,9 @@
-=======
-Credits
-=======
+# Credits
 
-Development Lead
-----------------
+## Development Lead
 
 * Shoji Kumagai <take.this.2.your.grave@gmail.com>
 
-Contributors
-------------
+## Contributors
 
 * None yet. Why not be the first?
