@@ -89,7 +89,7 @@ pytest==7.4.3
     #   pytest-django
 pytest-cov==4.1.0
     # via -r testing.txt
-pytest-django==4.6.0
+pytest-django==4.7.0
     # via -r testing.txt
 pytz==2022.1
     # via
