@@ -47,7 +47,7 @@ mccabe==0.7.0
     # via
     #   -r development.txt
     #   flake8
-mypy==1.6.1
+mypy==1.7.0
     # via -r development.txt
 mypy-extensions==1.0.0
     # via
@@ -103,6 +103,7 @@ svgwrite==1.4.3
     # via -r base.txt
 tomli==2.0.1
     # via
+    #   -r development.txt
     #   -r testing.txt
     #   black
     #   coverage
