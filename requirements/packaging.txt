@@ -18,7 +18,7 @@ cryptography==41.0.6
     # via secretstorage
 docutils==0.19
     # via readme-renderer
-idna==3.4
+idna==3.6
     # via
     #   -r packaging.in
     #   requests
