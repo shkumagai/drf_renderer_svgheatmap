@@ -66,7 +66,7 @@ platformdirs==2.5.2
     # via
     #   -r development.txt
     #   black
-pluggy==1.0.0
+pluggy==1.4.0
     # via
     #   -r testing.txt
     #   pytest
@@ -82,7 +82,7 @@ pyparsing==3.0.9
     # via
     #   -r testing.txt
     #   packaging
-pytest==7.4.4
+pytest==8.0.0
     # via
     #   -r testing.txt
     #   pytest-cov
