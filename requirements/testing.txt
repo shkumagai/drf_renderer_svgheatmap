@@ -25,7 +25,7 @@ pytest==8.0.0
     #   pytest-django
 pytest-cov==4.1.0
     # via -r testing.in
-pytest-django==4.7.0
+pytest-django==4.8.0
     # via -r testing.in
 tomli==2.0.1
     # via
