@@ -19,7 +19,7 @@ coverage[toml]==6.4.2
     #   -r testing.txt
     #   coverage
     #   pytest-cov
-django==4.2.10
+django==4.2.11
     # via
     #   -r base.txt
     #   djangorestframework
