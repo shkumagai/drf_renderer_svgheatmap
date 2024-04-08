@@ -10,10 +10,8 @@ django==4.2.11
     # via
     #   -r base.in
     #   djangorestframework
-djangorestframework==3.14.0
+djangorestframework==3.15.1
     # via -r base.in
-pytz==2022.1
-    # via djangorestframework
 sqlparse==0.4.4
     # via django
 svgwrite==1.4.3
