@@ -5,19 +5,23 @@ help:
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 TEST_SESSIONS := $(shell nox --json -l | jq -r '.[] | select(.session | startswith("test")) | .session' | tr "\t" " ")
-NOX_CMD := pdm run nox -r
+NOX_CMD := pdm run nox
 
 .PHONY: install
 install: ## setup environment
-	pdm venv create
+	pdm install --dev
 
 .PHONY: build
 build: ## build source distribution and wheel package
 	pdm build --clean
 
 .PHONY: lint
-lint: ## check style with flake8
-	$(NOX_CMD) --tags lint
+lint: ## check style with ruff
+	$(NOX_CMD) --session lint
+
+.PHONY: format
+format: ## format code with ruff
+	$(NOX_CMD) --session format
 
 .PHONY: test
 test: ## run tests

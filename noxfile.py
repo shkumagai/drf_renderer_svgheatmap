@@ -54,65 +54,63 @@ def test_djmain(session):
     run_pytest(session)
 
 
-@nox.session(tags=["style", "lint"])
-def black(session):
-    """Apply black format rules."""
+@nox.session(tags=["lint"])
+def check(session):
+    """ruffを使ってpythonコードの文法チェックを実行します
 
+    # すべてのファイル・パスを対象にruffを実行します
+    $ nox --session check
+
+    # 特定のファイル・パスを対象にruffを実行します
+    $ nox --session check -- noxfile.py
+    """
     posargs = (
         session.posargs
         if session.posargs
-        else ["--check", "--diff", "drf_renderer_svgheatmap", "tests", "noxfile.py"]
+        else ["check", "--fix", "drf_renderer_svgheatmap", "tests", "noxfile.py"]
     )
 
-    session.install("black")
-    session.run("black", *posargs)
-
-
-@nox.session(tags=["style", "lint"])
-def isort(session):
-    """Apply isort import format rules."""
-
-    posargs = (
-        session.posargs
-        if session.posargs
-        else ["--check-only", "--diff", "drf_renderer_svgheatmap", "tests"]
-    )
-
-    session.install("isort")
-    session.run("isort", *posargs)
+    session.notify("ruff", posargs=posargs)
 
 
 @nox.session
-def fmt(session):
-    """Format code using black and isort."""
+def format(session):
+    """ruffを使ってpythonコードの文法チェックを実行します
+
+    # すべてのファイル・パスを対象にruffを実行します
+    $ nox --session check
+
+    # 特定のファイル・パスを対象にruffを実行します
+    $ nox --session check -- noxfile.py
+    """
+    posargs = (
+        session.posargs
+        if session.posargs
+        else ["format", "drf_renderer_svgheatmap", "tests", "noxfile.py"]
+    )
+
+    session.notify("ruff", posargs=posargs)
+
+
+@nox.session
+def ruff(session):
+    """ruffを実行します
+
+    # すべてのファイル・パスを対象にruffを実行します
+    $ nox --session ruff
+
+    # 特定のファイル・パスを対象にruffを実行します
+    $ nox --session ruff -- noxfile.py
+    """
 
     posargs = (
         session.posargs
         if session.posargs
-        else ["drf_renderer_svgheatmap", "tests", "noxfile.py"]
+        else ["check", "drf_renderer_svgheatmap", "tests", "noxfile.py"]
     )
 
-    session.notify("black", posargs=posargs)
-    session.notify("isort", posargs=posargs)
-
-
-@nox.session(tags=["style", "lint"])
-def flake8(session):
-    """Apply flake8 rules."""
-
-    posargs = (
-        session.posargs
-        if session.posargs
-        else ["drf_renderer_svgheatmap", "tests", "noxfile.py"]
-    )
-
-    session.install("flake8")
-    session.install("flake8-copyright")
-    session.install("flake8-commas")
-    session.install("flake8-print")
-    session.install("flake8-return")
-    session.install("flake8-string-format")
-    session.run("flake8", *posargs)
+    session.install("ruff")
+    session.run("ruff", *posargs)
 
 
 @nox.session(tags=["security", "lint"])
@@ -128,7 +126,9 @@ def bandit(session):
     session.install("bandit[toml]")
     session.run(
         # fmt: off
-        "bandit", "-c", "pyproject.toml",
+        "bandit",
+        "-c",
+        "pyproject.toml",
         "--quiet",
         "--recursive",
         *posargs,
