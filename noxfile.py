@@ -30,7 +30,7 @@ def test_dj32(session):
     run_pytest(session)
 
 
-@nox.session(python=["3.8", "3.9", "3.10", "3.11"])
+@nox.session(python=["3.8", "3.9", "3.10"])
 def test_dj40(session):
     """Run tests against Django ~= 4.0."""
 
@@ -46,7 +46,23 @@ def test_dj41(session):
     run_pytest(session)
 
 
-@nox.session(python=["3.10", "3.11"])
+@nox.session(python=["3.8", "3.9", "3.10", "3.11", "3.12"])
+def test_dj42(session):
+    """Run tests against Django ~= 4.2."""
+
+    session.install("django ~= 4.2")
+    run_pytest(session)
+
+
+@nox.session(python=["3.10", "3.11", "3.12"])
+def test_dj50(session):
+    """Run tests against Django ~= 5.0."""
+
+    session.install("django ~= 5.0")
+    run_pytest(session)
+
+
+@nox.session(python=["3.10", "3.11", "3.12"])
 def test_djmain(session):
     """Run tests against Django HEAD main (development)."""
 
