@@ -110,7 +110,7 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
 
         svg_render_map = getattr(view, "svg_render_map", None)
         bare_data = data if svg_render_map is None else data[svg_render_map]
-        datagroup = self.translate(
+        data_group = self.translate(
             bare_data,
             width,
             height,
@@ -122,14 +122,14 @@ class BaseSVGHeatmapRenderer(BaseRenderer):
         )
 
         drawSize = (width, height)
-        svgargs = getattr(view, "svgargs", {})
+        svg_args = getattr(view, "svg_args", {})
         drawing = Drawing(
             self.filename,
             size=drawSize,
             profile=self.svg_profile,
-            **svgargs,
+            **svg_args,
         )
-        drawing.add(datagroup)
+        drawing.add(data_group)
 
         return drawing.tostring().encode("ascii")
 

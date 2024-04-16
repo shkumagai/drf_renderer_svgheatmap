@@ -27,8 +27,8 @@ from drf_renderer_svgheatmap.renderers import (
     SimpleSVGHeatmapRenderer,
 )
 
-DUMMYSTATUS = status.HTTP_200_OK
-EMPTYCONTENT = []
+DUMMY_STATUS = status.HTTP_200_OK
+EMPTY_CONTENT = []
 
 
 def generatePoints(grid=32, length=360, is_1d=False):
@@ -56,7 +56,7 @@ class EmptyBaseMockView(APIView):
     )
 
     def get(self, request, **kwargs):
-        return Response(EMPTYCONTENT, status=DUMMYSTATUS)
+        return Response(EMPTY_CONTENT, status=DUMMY_STATUS)
 
 
 class SomethingBaseMockView(APIView):
@@ -66,10 +66,10 @@ class SomethingBaseMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints()
-        return Response(points, status=DUMMYSTATUS)
+        return Response(points, status=DUMMY_STATUS)
 
 
-re_svgroot = re.compile(
+re_svg_root = re.compile(
     r"""^<svg
     \ baseProfile="full"
     \ height="[.0-9%]+"
@@ -94,7 +94,7 @@ class TestBaseSVGHeatmapRenderer(object):
             BaseSVGHeatmapRenderer.media_type + "; charset=utf-8"
             == response["Content-Type"]
         )
-        assert re_svgroot.search(response.content) is not None
+        assert re_svg_root.search(response.content) is not None
         assert re.search(r"<g />".encode("utf-8"), response.content) is not None
 
     def test_renderer_serializes_content_on_format_json(self, client):
@@ -102,7 +102,7 @@ class TestBaseSVGHeatmapRenderer(object):
 
         assert 200 == response.status_code
         assert JSONRenderer.media_type == response["Content-Type"]
-        assert str(EMPTYCONTENT).encode("utf-8") == response.content
+        assert str(EMPTY_CONTENT).encode("utf-8") == response.content
 
     def test_renderer_serializes_content_on_format_svg(self, client):
         response = client.get("/empty.svg")
@@ -112,7 +112,7 @@ class TestBaseSVGHeatmapRenderer(object):
             BaseSVGHeatmapRenderer.media_type + "; charset=utf-8"
             == response["Content-Type"]
         )
-        assert re_svgroot.search(response.content) is not None
+        assert re_svg_root.search(response.content) is not None
         assert re.search(r"<g />".encode("utf-8"), response.content) is not None
 
     def test_renderer_not_implemented_translate_method(self, client):
@@ -123,7 +123,7 @@ class TestBaseSVGHeatmapRenderer(object):
             BaseSVGHeatmapRenderer.media_type + "; charset=utf-8"
             == response["Content-Type"]
         )
-        assert re_svgroot.search(response.content) is not None
+        assert re_svg_root.search(response.content) is not None
         assert re.search(r"<g />".encode("utf-8"), response.content) is not None
         assert b'width="640"' in response.content
         assert b'height="1280"' in response.content
@@ -133,7 +133,7 @@ class EmptySimpleMockView(APIView):
     renderer_classes = (SimpleSVGHeatmapRenderer,)
 
     def get(self, request, **kwargs):
-        return Response(EMPTYCONTENT, status=DUMMYSTATUS)
+        return Response(EMPTY_CONTENT, status=DUMMY_STATUS)
 
 
 class SomethingSimple2DMockView(APIView):
@@ -145,7 +145,7 @@ class SomethingSimple2DMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints(grid=self.grid)
-        return Response({"interactions": points}, status=DUMMYSTATUS)
+        return Response({"interactions": points}, status=DUMMY_STATUS)
 
 
 class SomethingSimple1DMockView(SomethingSimple2DMockView):
@@ -160,7 +160,7 @@ class AnotherSimpleMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints()
-        return Response(points, status=DUMMYSTATUS)
+        return Response(points, status=DUMMY_STATUS)
 
 
 class OtherSimpleMockView(APIView):
@@ -171,7 +171,7 @@ class OtherSimpleMockView(APIView):
 
     def get(self, request, **kwargs):
         points = generatePoints()
-        return Response(points, status=DUMMYSTATUS)
+        return Response(points, status=DUMMY_STATUS)
 
 
 re_rectnode = re.compile(
@@ -191,7 +191,7 @@ re_rectnode = re.compile(
 
 
 class TestSimpleSVGHeatmapRenderer(object):
-    def test_renderer_serializes_2dcontent(self, client):
+    def test_renderer_serializes_2d_content(self, client):
         response = client.get("/simple2d")
 
         # with open('sample2d.svg', 'w') as fp:
@@ -207,7 +207,7 @@ class TestSimpleSVGHeatmapRenderer(object):
         assert b'height="100%"' in response.content
         assert b'opacity="0.4"' in response.content
 
-    def test_renderer_serializes_1dcontent(self, client):
+    def test_renderer_serializes_1d_content(self, client):
         response = client.get("/simple1d")
 
         # with open('sample1d.svg', 'w') as fp:
@@ -255,5 +255,5 @@ class TestSimpleSVGHeatmapRenderer(object):
             SimpleSVGHeatmapRenderer.media_type + "; charset=utf-8"
             == response["Content-Type"]
         )
-        assert re_svgroot.search(response.content) is not None
+        assert re_svg_root.search(response.content) is not None
         assert re.search(r"<g />".encode("utf-8"), response.content) is not None

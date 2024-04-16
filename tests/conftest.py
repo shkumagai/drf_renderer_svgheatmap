@@ -21,7 +21,7 @@ import django
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--no-pkgroot",
+        "--no-pkg-root",
         action="store_true",
         default=False,
         help=(
@@ -59,7 +59,7 @@ def pytest_configure(config):
                 },
             },
         ],
-        MODDLEWARE=(
+        MIDDLEWARE=(
             "django.middleware.common.CommonMiddleware",
             "django.contrib.sessions.middleware.SessionMiddleware",
             "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -79,7 +79,7 @@ def pytest_configure(config):
         PASSWORD_HASHERS=("django.contrib.auth.hashers.MD5PasswordHasher",),
     )
 
-    if config.getoption("--no-pkgroot"):
+    if config.getoption("--no-pkg-root"):
         sys.path.pop(0)
 
         import drf_renderer_svgheatmap
