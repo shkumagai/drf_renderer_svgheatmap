@@ -12,7 +12,7 @@ MANIFEST
 
 # Unit test / coverage reports
 htmlcov/
-.tox/
+.nox/
 .coverage
 .coverage.*
 .cache
