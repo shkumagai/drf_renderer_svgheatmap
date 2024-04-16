@@ -10,7 +10,7 @@ def run_pytest(session):
 
     posargs = session.posargs if session.posargs else ["tests"]
 
-    session.install(".[testing]")
+    session.run_always("pdm", "install", "-G", "testing", external=True)
     session.run(
         "pytest",
         *posargs,
