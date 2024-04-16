@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
       max-parallel: 2
 
     steps:
@@ -31,4 +31,4 @@ jobs:
         run: |
           python -V
           pdm list --graph
-          pdm run nox -s test_dj32 test_dj40 test_dj41 test_djmain --python "${{ matrix.python-version }}"
+          pdm run nox -s test_dj32 test_dj40 test_dj41 test_dj42 test_dj50 test_djmain --python "${{ matrix.python-version }}"
