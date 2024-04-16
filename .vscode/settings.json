@@ -29,5 +29,26 @@
         "**/.venv/**": true,
         "**/__pycache__/**": true,
         "**/node_modules/*/**": true,
-    }
+    },
+    "cSpell.userWords": [
+        // library names
+        "authtoken",
+        "mypy",
+        "svgwrite",
+        "virtualenv",
+        // reserved words
+        "addoption",
+        "mkvirtualenv",
+        "kwargs",
+        "svgheatmap",
+        // others
+        "shkumagai",
+        "kumagai"
+    ],
+    "cSpell.ignorePaths": [
+        ".github",
+        ".vscode",
+        "noxfile.py",
+        "pdm.lock"
+    ]
 }
